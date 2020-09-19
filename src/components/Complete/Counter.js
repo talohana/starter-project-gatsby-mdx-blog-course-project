@@ -1,7 +1,8 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react';
+import styled from 'styled-components';
+
 const Counter = () => {
-  const [count, setCount] = React.useState(0)
+  const [count, setCount] = React.useState(0);
   return (
     <Wrapper>
       <h1>counter</h1>
@@ -18,8 +19,8 @@ const Counter = () => {
         </button>
       </div>
     </Wrapper>
-  )
-}
+  );
+};
 
 // Styling Only
 
@@ -60,6 +61,6 @@ const Wrapper = styled.div`
     background: var(--clr-grey-5);
     color: var(--clr-white);
   }
-`
+`;
 
-export default Counter
+export default Counter;
