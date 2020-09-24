@@ -1,0 +1,80 @@
+---
+layout: post
+slug: gatsby-tutorial
+image: ./images/gatsby-1.png
+date: 2020-09-23
+author: Tal Ohana
+category: gatsby
+readTime: 50
+---
+
+import { Link } from 'gatsby';
+import { FiInfo } from 'react-icons/fi';
+import { Counter, LikeButton } from '../../components/Complete';
+
+## My first mdx file
+
+**I'm baby activated charcoal thundercats YOLO, pickled vegan art party coloring book man bun**
+raw denim trust fund aesthetic vape plaid. Pug sriracha fashion axe try-hard shabby chic tacos.
+Craft beer roof party waistcoat polaroid chartreuse meditation scenester fingerstache, meh cronut YOLO fixie narwhal tattooed.
+Messenger bag cred sartorial shoreditch blue bottle church-key.
+Tattooed sustainable kitsch fashion axe pork belly fanny pack paleo disrupt vexillologist.
+Typewriter ennui fashion axe umami copper mug. Skateboard irony +1,
+thundercats yuccie gentrify farm-to-table post-ironic scenester tumblr.
+
+# My Heading 1
+
+###### My Heading 6
+
+<div className="code">
+
+```js
+const firstName = 'john';
+const lastName = 'smith';
+```
+
+</div>
+
+<div className="nice-text">
+  <h3>nice text</h3>
+  <FiInfo className="nice-text-icon" />
+  <p>
+    Paleo keytar pickled messenger bag shoreditch poutine activated charcoal
+    iceland mumblecore. Wayfarers locavore cardigan viral knausgaard pork belly,
+    whatever pop-up tote bag swag.
+  </p>
+</div>
+
+<h2>React Components</h2>
+
+<Counter />
+
+```jsx
+import React from 'react';
+import styled from 'styled-components';
+import { AiOutlineLike } from 'react-icons/ai';
+const LikeButton = () => {
+  const [value, setValue] = React.useState(0);
+  return (
+    <Wrapper>
+      <div>
+        <button onClick={() => setValue(value + 1)}>
+          <AiOutlineLike />
+        </button>
+        <p>
+          Liked the post?
+          <br />
+          Click thumbs up few times
+        </p>
+      </div>
+      <span>+{value}</span>
+    </Wrapper>
+  );
+};
+```
+
+<LikeButton />
+
+<Link to="/posts" className="btn btn-center">
+  all posts
+</Link>

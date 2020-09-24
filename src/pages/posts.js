@@ -1,11 +1,44 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import Hero from '../components/Hero'
-import { graphql } from 'gatsby'
-import Posts from '../components/Posts'
+import React from 'react';
+import Hero from '../components/Hero';
+import Layout from '../components/Layout';
+import Posts from '../components/Posts';
 // ...GatsbyImageSharpFluid
-const PostsPage = ({ data }) => {
-  return <h2>posts page</h2>
-}
 
-export default PostsPage
+const PostsPage = ({ data }) => {
+  const posts = data.allMdx.nodes;
+
+  return (
+    <Layout>
+      <Hero />
+      <Posts posts={posts} />
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  query {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+      nodes {
+        id
+        excerpt
+        frontmatter {
+          title
+          author
+          category
+          date(formatString: "MMM, Do, YYYY")
+          slug
+          readTime
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default PostsPage;
